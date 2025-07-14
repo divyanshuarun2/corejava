@@ -22,5 +22,7 @@ public class Main {
         Demo1 demo1= new Demo1();
         System.out.println(demo1.compare("3",3));
 
+
+
     }
 }
