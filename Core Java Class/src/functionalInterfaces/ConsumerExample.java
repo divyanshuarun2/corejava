@@ -16,14 +16,15 @@ public class ConsumerExample {
         Consumer<Student>c3 = (student)-> System.out.print(student.getName()+": ");
         Consumer<Student>c4 = (student)-> System.out.println(student.getGender());
         List<Student> studentList = Student.getStudents();
-        studentList.forEach(c3.andThen(c4));
+        studentList.forEach((student)->c3.andThen(c4).accept(student));
     }
     public static void printNameAndGenderWithCondition(){
         Consumer<Student>c3 = (student)-> System.out.print(student.getName()+": ");
         Consumer<Student>c4 = (student)-> System.out.println(student.getGender());
         List<Student> studentList = Student.getStudents();
 
-        studentList.forEach((student) -> {if(student.getGradeLevel()>2){
+        studentList.forEach((student) -> {
+            if(student.getGradeLevel()>2){
         c3.andThen(c4).accept(student);}
         });
     }

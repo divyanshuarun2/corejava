@@ -51,8 +51,8 @@ public class Student {
     public static List<Student> getStudents(){
         Student s1= new Student("Male",9.5,1,"Osho");
         Student s2= new Student("Male",8.5,1,"shravan");
-        Student s3= new Student("Male",7.5,2,"Sweta");
-        Student s4= new Student("Male",6.5,2,"Prachi");
+        Student s3= new Student("Female",7.5,2,"Sweta");
+        Student s4= new Student("Female",6.5,2,"Prachi");
         Student s5= new Student("Male",6.65,3,"Amit");
         return Arrays.asList(s1,s2,s3,s4,s5);
     }
