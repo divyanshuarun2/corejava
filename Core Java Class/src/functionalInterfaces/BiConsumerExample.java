@@ -12,7 +12,7 @@ public class BiConsumerExample {
 
         BiConsumer<Integer,Integer> division = (a,b)->
                 System.out.println("division= "+a/b);
-
+        //andThenfunction is used to chaining of functional interface
         multiplication.andThen(division).accept(10,5);
 
 
