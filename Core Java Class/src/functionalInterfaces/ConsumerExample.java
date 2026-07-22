@@ -22,18 +22,19 @@ public class ConsumerExample {
         Consumer<Student>c3 = (student)-> System.out.print(student.getName()+": ");
         Consumer<Student>c4 = (student)-> System.out.println(student.getGender());
         List<Student> studentList = Student.getStudents();
+        Consumer<Student> c5 = (student)->{if(student.getGradeLevel()>=2){
+            c3.andThen(c4).accept(student);
+        }
+        };
 
-        studentList.forEach((student) -> {
-            if(student.getGradeLevel()>2){
-        c3.andThen(c4).accept(student);}
-        });
+        studentList.forEach(c5);
     }
     public static void main(String[] args) {
         //takes something but return nothing
         Consumer<String> c1= (s)-> System.out.println(s.toUpperCase());
 
-        c1.accept("java8");
-        printStudnets();
+       // c1.accept("java8");
+        //printStudnets();
         //printNameAndGender();
         printNameAndGenderWithCondition();
 
